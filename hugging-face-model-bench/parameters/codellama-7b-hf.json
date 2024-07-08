@@ -1,0 +1,12 @@
+{
+  "inference": {
+    "temperature": 0.1,
+    "max_new_tokens": 8192
+
+  },
+  "tgi": {
+    "--max-total-tokens": 16384,
+    "--max-batch-prefill-tokens": 16384,
+    "--max-input-length": 8192
+  }
+}

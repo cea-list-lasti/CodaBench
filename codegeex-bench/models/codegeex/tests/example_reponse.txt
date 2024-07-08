@@ -1,0 +1,146 @@
+python inference.py         --prompt-file /home/data/dataset/BLOOM/dev/jerome/codegeex/tests/test_humaneval.txt         --tokenizer-path /home/data/dataset/BLOOM/CodeGeeX/codegeex/tokenizer         --micro-batch-size 1         --out-seq-length 1024         --temperature 0.8         --top-p 0.95         --top-k 0         --greedy         --num-layers 39             --hidden-size 5120             --num-attention-heads 40             --max-position-embeddings 2048             --attention-softmax-in-fp32             --load /home/data/dataset/BLOOM/CodeGeeX/aria2/codegeex_13b.pt             --layernorm-epsilon 1e-5             --fp16             --ws-encoding-start-id 10             --ws-encoding-length 10             --make-vocab-size-divisible-by 52224             --seq-length 2048
+[2023-07-12 14:20:15,442] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Generation finished.
+args Namespace(num_layers=39, hidden_size=5120, num_attention_heads=40, padded_vocab_size=52224, max_position_embeddings=2048, temperature=0.8, greedy=True, top_p=0.95, top_k=0, out_seq_length=1024, prompt_file='/home/data/dataset/BLOOM/dev/jerome/codegeex/tests/test_humaneval.txt', tokenizer_path='/home/data/dataset/BLOOM/CodeGeeX/codegeex/tokenizer', load='/home/data/dataset/BLOOM/CodeGeeX/aria2/codegeex_13b.pt', state_dict_path=None, micro_batch_size=1, quantize=False, interative=False)
+Loading tokenizer ...
+Loading state dict ...
+Building CodeGeeX model ...
+Current prompt:
+from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n
+\n\ndef is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \"\"\"\n
+N_token_prompt: 342
+
+Generated code 681:
+\n\nif __name__ == '__main__':\n    number_of_elements = int(input(\"Number of elements: \").strip())\n    threshold = float(input(\"Threshold value (float): \").strip())\n\n    numbers = [float(number) for number in input(\"Enter numbers: \").strip().split(',')]\n\n    is_palindrome_list = []\n    for number in numbers:\n        is_palindrome_list.append(is_palindrome(number))\n\n    print(\"Number of palindromes with \" + str(threshold) + \"threshold: \", len(filter(lambda x: x == True and (has_close_elements(numbers, threshold))), is_palindrome_list))\n\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Question 4.2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Answer:\n\n\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Question 4.3"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Answer:\n\n\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Question 4.4"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Answer:\n\n\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Question 4.5"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Answer:\n\n\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Question 4.6"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Answer:\n\n\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  
+generated code : ['\\n\\nif __name__ == \'__main__\':\\n    number_of_elements = int(input(\\"Number of elements: \\").strip())\\n    threshold = float(input(\\"Threshold value (float): \\").strip())\\n\\n    numbers = [float(number) for number in input(\\"Enter numbers: \\").strip().split(\',\')]\\n\\n    is_palindrome_list = []\\n    for number in numbers:\\n        is_palindrome_list.append(is_palindrome(number))\\n\\n    print(\\"Number of palindromes with \\" + str(threshold) + \\"threshold: \\", len(filter(lambda x: x == True and (has_close_elements(numbers, threshold))), is_palindrome_list))\\n\\n"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "### Question 4.2"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "Answer:\\n\\n\\n"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "### Question 4.3"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "Answer:\\n\\n\\n"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "### Question 4.4"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "Answer:\\n\\n\\n"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "### Question 4.5"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "Answer:\\n\\n\\n"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "### Question 4.6"\n   ]\n  },\n  {\n   "cell_type": "markdown",\n   "metadata": {},\n   "source": [\n    "Answer:\\n\\n\\n"\n   ]\n  }\n ],\n "metadata": {\n  "kernelspec": {\n   "display_name": "Python 3",\n   "language": "python",\n   "name": "python3"\n  },\n  ']
+Total generation time: 37.62729244865477
+Current prompt:
+from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n
+\n\ndef is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \"\"\"\n
+N_token_prompt: 342
+
+Generated code 681:
+    \n    string = reverse_string(string)\n    palindrome = reverse_string(string[::-1])\n    return string + palindrome if is_palindrome(palindrome) else string\n\n\n\"\"\"\n\n\nif __name__ == '__main__':\n    print(\"Enter a string:\")\n    string = input()\n    if len(string) < 2:\n        print(\"The string must contain at least 2 characters.\"),\n        print(\"You gave the string: \" + string),\n        print(\"\")\n        exit(0)\n    if not has_close_elements(numbers=float(string), threshold=0.5):\n        print(\"The string does not contain any two numbers closer to each other than 0.5.\"),\n        print(\"\")\n        exit(0)\n    print(\"The string contains two numbers closer to each other than 0.5:\")),\n    print(\"The first number is %f\" % numbers[0]),\n    print(\"The second number is %f\" % numbers[1])),\n    print(\"The shortest palindrome is:\")),\n    print(make_palindrome(string)))"
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "solution.solve(func=has_close_elements,\n",
+    "                args=([1.0, 2.0, 3.0], 0.5),\n",
+    "                expected_output=False,\n",
+    "                test=test1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter a string:\n",
+      "a\n",
+      "\n",
+      "The string contains no two numbers closer to each other than 0.5:\n",
+      "The first number is 1.000000\n",
+      "The second number is 2.000000\n",
+      "The shortest palindrome is:\n",
+      "a\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Test 2\n",
+    "def has_close_elements2(numbers: List[float], threshold: float) -> bool:\n",
+    "    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n",
+    "        given threshold.\n",
+    "    \"\"\"\n",
+    
+generated code : ['    \\n    string = reverse_string(string)\\n    palindrome = reverse_string(string[::-1])\\n    return string + palindrome if is_palindrome(palindrome) else string\\n\\n\\n\\"\\"\\"\\n\\n\\nif __name__ == \'__main__\':\\n    print(\\"Enter a string:\\")\\n    string = input()\\n    if len(string) < 2:\\n        print(\\"The string must contain at least 2 characters.\\"),\\n        print(\\"You gave the string: \\" + string),\\n        print(\\"\\")\\n        exit(0)\\n    if not has_close_elements(numbers=float(string), threshold=0.5):\\n        print(\\"The string does not contain any two numbers closer to each other than 0.5.\\"),\\n        print(\\"\\")\\n        exit(0)\\n    print(\\"The string contains two numbers closer to each other than 0.5:\\")),\\n    print(\\"The first number is %f\\" % numbers[0]),\\n    print(\\"The second number is %f\\" % numbers[1])),\\n    print(\\"The shortest palindrome is:\\")),\\n    print(make_palindrome(string)))"\n     },\n     "execution_count": 12,\n     "metadata": {},\n     "output_type": "execute_result"\n    }\n   ],\n   "source": [\n    "solution.solve(func=has_close_elements,\\n",\n    "                args=([1.0, 2.0, 3.0], 0.5),\\n",\n    "                expected_output=False,\\n",\n    "                test=test1)"\n   ]\n  },\n  {\n   "cell_type": "code",\n   "execution_count": 13,\n   "metadata": {},\n   "outputs": [\n    {\n     "name": "stdout",\n     "output_type": "stream",\n     "text": [\n      "Enter a string:\\n",\n      "a\\n",\n      "\\n",\n      "The string contains no two numbers closer to each other than 0.5:\\n",\n      "The first number is 1.000000\\n",\n      "The second number is 2.000000\\n",\n      "The shortest palindrome is:\\n",\n      "a\\n",\n      "\\n"\n     ]\n    }\n   ],\n   "source": [\n    "# Test 2\\n",\n    "def has_close_elements2(numbers: List[float], threshold: float) -> bool:\\n",\n    "    \\"\\"\\" Check if in given list of numbers, are any two numbers closer to each other than\\n",\n    "        given threshold.\\n",\n    "    \\"\\"\\"\\n",\n    ']
+Total generation time: 29.905113803222775

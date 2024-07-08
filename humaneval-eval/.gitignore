@@ -1,0 +1,4 @@
+*.kdev4
+*.sif
+*.tar
+slurm-*.out

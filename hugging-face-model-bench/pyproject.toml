@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "hugging-face-model-bench"
+version = "0.1.0"
+description = ""
+authors = ["Julien Tourille <julien.tourille@cea.fr>"]
+readme = "README.md"
+packages = [
+    { include = "hfmodelbench", from = "src"},
+]
+
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+huggingface-hub = "^0.19.4"
+pendulum = "^2.1.2"
+loguru = "^0.7.2"
+click = "^8.1.7"
+
+[tool.poetry.scripts]
+codabench = 'hfmodelbench.cli:cli'
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.6"
+pre-commit = "^3.5.0"
+
+[tool.ruff]
+target-version = "py39"
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",
+    "F401", # Unused imports
+    "C901",  # too complex
+    "W191", # indentation contains tabs
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
